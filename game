@@ -1,0 +1,1575 @@
+#!/bin/sh
+
+#Color defs
+BLUE='\e[0;34m' #Player
+GREEN='\033[0;32m' #Good outcome
+YELLOW='\033[1;33m' #Wrong input 
+RED='\033[0;31m' #Bad outcome
+WHITE='\033[1;37m' #Game text
+CYAN='\033[0;36m' #NPCs
+BLACK='\033[0;30m' 
+NC='\033[0m' 
+
+
+
+#input="/home/zaix/Desktop/Game/Titles"
+#while IFS=, read -r f1 f2;
+#do
+#	titles=($f1 $f2)
+#	echo ${titles[0]}
+  		
+#done < "$input"
+
+#Main game function
+Game(){
+echo "It is 5 am, your alarm wakes you up for your daily morning routine as per usual, you get out of bed and head to the kitchen."
+sleep 5
+echo "Preparing your breakfast and coffee right before you go take for a hot shower, however as you get out of the shower you notice something strange."
+sleep 5
+echo "You can see. The view is not all dark as it has been for the past 5 years, you are perplexed and reminded of the fact that you and the rest of the world have been blind ever since 'that' happened."
+sleep 5
+echo "In a rush of adrenaline and a sense of confusion, you remember the event that took place that day, the beginning of the Dark Century, or at least that is what everyone calls it now."
+sleep 5
+echo "The day everyone simultaneously lost sight after lunar eclipse that lasted 10 days took place."
+sleep 5
+echo "$BLUE'Nevermind that now, I CAN SEE AGAIN!!!' $NC, you think to yourself gleefully, you start going around your house sighting objects you forgot existed."
+sleep 5
+echo "30 minutes pass and the confusion starts to fade away, as you start to notice writing all over your house walls."
+sleep 5
+echo "One sentence is written in dark brown paint that seems to have dried years ago, 'Do not let them know you can see' is all you can see on each and every room and wall in your own house."
+echo "This is the story of $p_name , who fortunately (or unfortunately) regained a sense that they never thought they would regain."
+sleep 15
+	Act1
+}
+
+#Per Act functions
+Act1(){
+	act=1
+	karma=0
+	path=0
+	error=1
+	
+	echo "All choices from this point forward have a chance to affect your fate as a player, take care\n"
+	echo "			ACT 1\n"
+	sleep 2
+	##clear
+	echo "You finally collected your thoughts and returned back to reality, you still have to go to work though.\n"
+	echo "1)Start preparing to leave for work.
+2)Skip work for the day and try to explore the world after you regained sight." 
+read choice
+	
+	while [ $error -eq 1 ]
+	do
+		case $choice in
+		1)
+			#karma=$((karma+1))
+			echo "${GREEN}You finish your daily morning routine and prepare to leave the house.$NC"
+			error=0
+			;;
+		2)
+			#karma=$((karma-1))
+			echo "${RED}Your boss calls 20 minutes before work as he usually does, you are forced to go as you can not be raising suspections this early.$NC"
+			error=0
+			;;
+		*)	
+			echo "${YELLOW}Wrong input, please try again$NC"
+			;;
+		esac	
+	done
+	error=1
+	sleep 5
+	##clear
+	echo "You leave the house for the first time after regaining sight."
+	echo "$BLUE'I can see again'$NC
+, you murmur to yourself as you are reminded by the creepy texts on the walls all around you."
+sleep 3
+	echo "You can see the trees, the people , the birds and the autonomous cars that had been developed as a countermeasure to the global blindness.
+	"
+	sleep 3
+	echo "However, there is one thing that is completely missing. Color.
+	"
+	sleep 3
+	echo "Everything you see is in black, white and gray , this had completely skipped your mind as you were still excited by the fact that you can see again.
+	"
+	sleep 3
+	echo "This only adds to the list of questions you have regarding all this mess that you found yourself in.
+	"
+	sleep 3
+	echo "You continue walking your usual path to work as you did everyday but it is more like a new road to you than anything.
+	"
+	sleep 3
+	echo "As you are crossing the street, you see a group of children playing by the road, one of them falls into the road in front of a car.
+	"
+	sleep 3
+	echo "
+1) Act as if you could not see anything to not alert anyone of your sight.
+2) Run to save the kid from a possibly fatal accident." 
+	read choice
+		
+	while [ $error -eq 1 ]
+	do
+		case $choice in
+		1)
+			#karma=$((karma+2))
+			echo "${GREEN}You remembered that all cars now have very strict safety measures and the kid is unharmed.$NC"
+			error=0
+			;;
+		2)
+			#karma=$((karma-2))
+			echo "${RED}You let your emotions overrule your logic and you save the kid but you forgot that cars now can never hit humans due to strict safety measures$NC"
+			#titles+="Savior"
+			#i=$((i+1))
+			error=0
+			;;
+		*)	
+			echo "$YELLOW Wrong input, please try again$NC"
+			;;
+		esac	
+	done	
+	error=1
+	sleep 5
+	##clear
+	echo "You arrive at the office, taking your usual spot at your computer and starting to work.
+	"
+	sleep 3
+	echo "You notice how strange the whole world has become, and remember how quickly everyone adapted to suddenly being blind
+	"
+	sleep 3
+	echo "$BLUE'It is like everything was in place for this to take place long before it ever did'$NC, you thought to yourself as you mindlessly typed away at your blind-friendly
+keyboard
+	"
+	sleep 3
+	echo "You work quietly until lunch break like you usually do, once the clock hits 12, you leave the building to go explore some more of your surroundings.
+ 	"
+ 	sleep 3
+ 	echo "Walking around the streets, observing all the different objects and living beings, you stumble upon more of that eerie writing on the wall until you notice something very strange,
+only those scribbles on the wall are coloured, $BLUE'Well, one more question to the list I guess'$NC,you think to yourself and continue strolling down the street
+	"
+	sleep 3
+	echo "As you are preparing to head back to the office, something catches your eye..... something coloured, a very bright red that stood out in the sea of gray
+	"
+	sleep 3
+	echo "You focus a bit more and it turns out to be a human, someone who is waving at you, as if they can see you staring at them.
+	"
+	sleep 3
+	echo "That person turned out to be actually gesturing you to follow him, he disappears a moment later in a dark alleyway.
+	"
+	sleep 3
+	echo "1)Don't follow the stranger into the alleyway.
+2)Your curiosity has peaked, and you chase after the man in hope of getting some answers."
+	read choice
+	while [ $error -eq 1 ]
+	do
+		case $choice in
+		1)
+			#karma=$((karma-5))
+			echo "${RED}You walk back to the office as if nothing happened, truly living by the 'ignorance is bliss' mindset$NC"
+			echo "However, your curiosity and confusion by the current events lead you to go to the alleyway after work anyway"
+			error=0
+			;;
+		2)
+			#karma=$((karma+2))
+			echo "${GREEN}You follow the strange man into the dark alley, seems like the mystery is going to be less confusing (or more).$NC"
+			echo "You call your boss and tell them you are taking the rest of the day off due to being sick."
+			#titles[i]="Curious"
+			#i=$((i+1))
+			error=0
+			;;
+		*)	
+			echo "${YELLOW}Wrong input, please try again$NC"
+			;;
+		esac	
+	done	
+	error=1
+	sleep 5
+	#clear
+	echo "End of act 1, saving progress and you may choose to 1)Start act2
+2)Exit the game"
+	read choice
+	echo "$karma,$path,$act,$p_name" > SaveFile
+	while [ $error -eq 1 ]
+	do
+		if [ $choice -eq 1 ]
+		then
+			Act2
+			error=0
+		elif [ $choice -eq 2 ]
+		then
+			echo "Thanks for playing!"
+			sleep 2
+			error=0
+			exit 2
+		else
+			echo "${YELLOW}Wrong input, please try again$NC"
+		fi		
+	done
+	#for i in ${titles[@]}
+	#do
+	#	echo $i > Titles
+	#done				
+}
+
+
+
+Act2(){
+	act=2
+	#clear
+	sleep 2
+	echo "			ACT 2"
+	echo "As you are following the strange man in the red shirt, you wonder if you should just go back as this was seeming more and more sketchy by the moment."
+	sleep 3
+	echo "You decide against the thought as you need answers and you need them quick."
+	sleep 3
+	echo "The man finally stops and you can talk to him."	
+	sleep 3
+	echo "$BLUE'You FINALLY stopped,who are you and why are you leading me this way??'$NC"
+	sleep 3
+	echo "The man just smiles in a way that you find creepy, and gestures with his hand for you to be quiet."
+	sleep 3
+	echo "The man then goes downstairs in a building at the end of the alley, you follow him."
+	sleep 3
+	echo "You walk through the door following his lead, what you see next is nothing short of what you would call a miracle."
+	sleep 3
+	echo "COLOURS is the only thing that pops in your mind, as you look around seeing people and paintings all fully coloured, your eyes tear up a bit as you get a nostalgic feeling to your life before this whole 'blinding' thing happened."
+	sleep 3
+	echo "$CYAN...:Sorry for not speaking to you all this time, it isn't safe to talk about our sight in public, I am sure you have seen the writings on the walls.$NC"
+	sleep 3
+	echo "$CYAN My name is ....$NC"
+	sleep 3
+	echo "1)Interrupt him to ask your questions
+2)Let him finish
+3)Rudely lash out at him"
+	read choice	
+	while [ $error -eq 1 ]
+	do
+		case $choice in
+		1)
+			echo "${CYAN} I understand your panic, I will answer whatever question you ask as long as I have the answer$NC"
+			echo "1)${BLUE} What is this place??$NC
+2)${BLUE} Why did I regain sight so suddenly??$NC
+3)${BLUE} Who are you??$NC"
+			read choice
+			sleep 2			
+			case $choice in
+			1)
+				echo "${CYAN} This place is somewhat like a safe space for those who suddenly regained sight just like you and me, it's where we can meet without the fear of 'them' noticing us$NC"
+				;;
+			2)
+				echo "${CYAN} As much as I would love to answer this question, I sadly don't know either as I am in the same situation as you.$NC"	
+				;;
+			3)
+				echo "${CYAN} My name is Ammar, I am a person with sight just like yourself$NC"
+				;;
+			*)
+				echo "${YELLOW}Wrong input, please try again$NC"
+				;;
+			esac		
+			error=0
+			;;
+		2)
+			echo "${CYAN}My name is Ammar, and this is place is like a cafe of sorts, where people who regained sight can find solace and support without any fear of being noticed$NC"
+			error=0
+			;;
+		3)
+			#titles+=Rude
+			#i=$((i+1))
+			#karma=$((karma-5))
+			echo "${RED}You lash out at the unknown man, he tries to calm you but you won't back down, the man seems angry with you and you don't get any answers out of him$NC"
+			;;	
+		*)	
+			echo "${YELLOW}Wrong input, please try again$NC"
+			;;
+		esac	
+	done	
+	error=1	
+	sleep 5
+	#clear
+	echo "An elderly man walks out of a backroom and introduces himself to you"
+	sleep 3
+	echo "${CYAN}....: Hello $p_name , I overheard your conversation with Ammar from the back, welcome to the SU cafe my name is Boomer"
+	sleep 3
+	echo "Boomer: I kind of run this place since I was the first to regain sight for some reason"
+	sleep 3
+	echo "Ammar: Boomer is special you know, you see this red shirt of mine? He gave it colour, as he did for all those people and paintings you see around here"
+	sleep 3
+	echo "Ammar: Nobody knows why or how these powers work, but we have reason to believe that just as colour can be given, sight can be too, follow me.$NC"
+	sleep 3
+	echo "You follow the two men into the backroom "
+	sleep 3
+	echo "As you enter the colourful room, you notice the toys on the ground and a child sitting on the couch, the child looks deep into your eyes, but his eyes are empty and soulless, he is blind"
+	sleep 3
+	echo "${CYAN}Ammar: This is my little boy, Ammar , unfortunately he is still blind which is why I asked you to follow me in here."
+	sleep 3
+	echo "Ammar senior: Try to touch his hand "
+	sleep 3
+	echo "${BLUE}What? Why?"
+	sleep 3
+	echo "${CYAN}Boomer: As Ammar told you, we believe that some people can give sight, we call them 'seers' and you might be one of those extremely gifted people$NC
+"
+	sleep 3
+	echo "1)Touch the kid's hand"
+	echo "2)${BLUE}That sounds so occultist and weird, I think I will leave $NC"
+	read choice
+	while [ $error -eq 1 ]
+	do
+		case $choice in
+		1)
+			#titles[i]="Seer"
+			#i=$((i+1))
+			#karma=$((karma+10))
+			echo "${GREEN}You hold the kid's hand tightly, as you imagine how frightening the world must be for a 5 year old child that suddenly lost sight and how much he suffered"
+			sleep 3
+			echo "${BLUE}At least for adults there was a twisted peace in knowing that everyone was on the same boat$NC you said to yourself"
+			sleep 3
+			echo "${GREEN}You are trying your hardest to imagine 'giving sight' to the little kid, a few moments later a light fills the entire room emitting from your hands"
+			sleep 3
+			echo "You faintly see a number on the back of your hand which was '4' as it fades back away to normal"
+			sleep 3
+			echo "${CYAN}Ammar jr.:DAD!!!! I CAN SEE AGAIN!"
+			sleep 3
+			echo "Ammar: Oh my god... we have to go let your mother know right away! $NC"
+			sleep 3
+			echo "Ammar said that in the happiest voice you have heard in the past 5 years as he held back his tears"
+			sleep 3
+			echo "${CYAN}Ammar: Thank you so much, $p_name , I will never for get this debt, ever$NC"
+			sleep 3
+			echo "${GREEN}He doesn't really give you time to say anything as he rushes home with his kid"
+			sleep 3
+			echo "${CYAN}Boomer: See? you actually had the gift we assumed someone would have, you are the first seer in our group welcome,$p_name,that is of course if you choose to join us $NC"
+			sleep 3
+			echo "1)Yes, I would like to join your group and bring sight to those who were robbed of it"
+			echo "2)I would like to take my time to consider the offer"
+			read choice
+			while [ $error -eq 1 ]
+			do
+				case $choice in
+				1)
+					echo "${CYAN}Boomer:That's great to hear! Welcome aboard!$NC"
+					echo "You are now a member of the restoration faction, this will affect the story going forward"
+					path=2
+					error=0
+					#titles[i]="Restorist"
+					#i=$((i+1))
+					;;
+				2)
+					echo "${CYAN}Boomer:Sure thing! and while you make up your mind, you are free to visit at any time, we owe you a big favour after all$NC"
+					path=0
+					error=0
+					;;
+				*)
+					echo "${YELLOW}Wrong input, please try again$NC"
+					;;
+				esac	
+			done
+			error=0
+				
+		;;
+		2)
+			echo "${CYAN}Boomer: Haha...is that so? Well, I can't force you to join against your will, and thanks for what you did with little Ammar either way.$NC"	
+			sleep 3
+			echo "You lost the chance to join the restoration faction."
+			#titles[i]="Cold hearted"
+			#i=$((i+1))
+			error=0
+			;;
+		*)
+			echo "${YELLOW}Wrong input, please try again$NC"
+			;;
+		esac	
+				
+	done
+	sleep 5
+	#clear
+	error=1
+	echo "You leave the cafe to go talk a calm walk back home by the sunset and take in all the new information"
+	sleep 2
+	#clear
+	echo "End of act 2, saving progress and you may choose to 1)Start act2
+2)Exit the game"
+	read choice
+	echo "$karma,$path,$act,$p_name" > SaveFile
+	while [ $error -eq 1 ]
+	do
+		if [ $choice -eq 1 ]
+		then
+			Act3
+			error=0
+		elif [ $choice -eq 2 ]
+		then
+			echo "Thanks for playing!"
+			sleep 2
+			error=0
+			exit 2
+		else
+			echo "${YELLOW}Wrong input, please try again$NC"
+		fi		
+	done	
+	#for i in ${titles[@]}
+	#do
+	#	echo $i > Titles
+	#done						
+}
+
+
+Act3(){
+	#clear
+	act=3
+	error=1
+	#clear
+	sleep 2
+	echo "			ACT 3"
+	echo "As you walk by the river bank, watching the beautiful red sunset, one of the few natural things that is still coloured"
+	sleep 3
+	echo "A lot of people are walking beside you, you stare a lot of them in the eye hoping that someone would react, but all you see is lifeless eyes"
+	sleep 3
+	echo "Near the end of your walk, you see a lady wearing a bright red dress who happens to have sunglasses on"
+	sleep 3
+	echo "${BLUE}Why would anyone need to wear sunglasses anymore? But I guess they make her more attractive$NC, you thought to yourself as you kept staring at her"
+	sleep 3
+	echo "To your unfortunate surprise, she gestures with her finger as if to invite you to come sit with her on a nearby bench"
+	sleep 3
+	echo "${BLUE}Well if anyone was 'Them', that would probably be her$NC, is the only thought that occurs to you as you consider your options"
+	sleep 3
+	echo "1)Ignore her and pretend to be blind"
+	echo "2)Start running at full speed away from her"
+	echo "3)Accept that you have been spotted and go talk to her, maybe she has some new information for you"
+	read choice
+	error=1
+	while [ $error -eq 1 ]
+	do
+		case $choice in
+		1)
+			sleep 3
+			#clear
+			echo "${CYAN}Red Lady:You didn't think that would work right? Your eyes pierced my face,mister."
+			sleep 3
+			echo "Come have a seat, I won't do anything to you$NC"
+			sleep 3
+			echo "1)Start running at full speed away from her"
+			echo "2)Just go have a chat"
+			read choice
+			while [ $error -eq 1 ]
+			do
+				case $choice in			
+				1)
+					sleep 3
+					#clear
+					echo "${RED}You start running away towards your house, you get out of her field of view"
+					sleep 3
+					echo "As you take a turn through the streets to get back home, someone calls out your name"
+					sleep 3
+					echo "You stop and turn around for a second when something heavy hits you on the back of the head and you black out."
+					sleep 3
+					echo "You wake up in a cold, dark, prison-like room, tied to a chair"
+					sleep 3
+					echo "You hear a voice from far away echoing all the way through the room"
+					sleep 3
+					echo "${CYAN}....:So, $p_name, you thought you could escape that easy huh? I have to say you should have been a bit smarter with your choice"
+					sleep 3
+					echo "${BLUE}Who are you?? What do you want from me and where am I??"
+					sleep 3
+					echo "${CYAN}....:Easy there champ, you aren't really in any position to be asking questions now, are you?"
+					sleep 3
+					echo "${CYAN}....:Oh well, it is unlikely that you will make it out of here anyway, so I might as well fill you in"
+					sleep 3
+					echo "${CYAN}....:You don't really need to know who I am, what we want from you is very simple really"
+					sleep 3
+					echo "${CYAN}....:We would like you to defect from the restoration faction and join us, we can put your seer powers to better use than those fools ever will"
+					sleep 3
+					echo "${BLUE}Wait...how did you know I had those powers and how did you know about the faction?"
+					sleep 3
+					echo "${CYAN}....:More questions,huh? but to answer your question, let's just say we have a... network, that lets us see more stuff than you think we can"
+					sleep 3
+					echo "${BLUE}Okay man, you seem to really be into that matrix role play, can you just tell me how to get out of here? I will probably do anything as long as it is in my power"
+					sleep 3
+					echo "${CYAN}....:I am gonna ignore that first remark because we need your power unfortunately"
+					sleep 3
+					echo "${CYAN}....:I don't really know about 'getting out of here' but if you want to live, then just work for us, it is that simple"
+					sleep 3
+					echo "${BLUE}Okay, but who is 'us' and what do they do?"
+					sleep 3
+					echo "${CYAN}....:Well, to put it in simple terms, we are a group that aims to preserve the current state of the world"
+					sleep 3
+					echo "${CYAN}....:Because just like everyone else, we don't know who 'them' are or what their purpose is, so instead of just going around spreading sight back and risking getting caught, we are controlling the process, limiting it to certain individuals who can be a bit smart about their actions "
+					sleep 3
+					echo "${BLUE}So... you are the 'good' guys?"
+					sleep 3
+					echo "${CYAN}....:Oh no definitely not, we are just realistic and logical, good and evil are really childish concepts when you think about it, we would do anything necessary to preserve the human race"
+					sleep 3
+					echo "${BLUE}Meaning that you would kill 'troublesome' individuals?"
+					sleep 3
+					echo "${CYAN}....:If need be, then yes, but we like to refrain from murder, which is why we would like you to work for us, to prevent unnecessary bloodshed and work towards finding who 'them' are"
+					sleep 3
+					echo "${CYAN}....:So, what do you say? $NC"
+					sleep 3
+					echo "1)Work with the mysterious group"
+					echo "2)Refuse to work with them because it goes against your morals"
+					read choice
+					error=1
+					while [ $error -eq 1 ]
+					do
+						case $choice in			
+						1)
+							sleep 3
+							#clear
+							echo "${CYAN}....:Wise choice, I knew you were smarter than you looked, welcome aboard, you can rest now and I will introduce you to your job later on.$NC"
+							sleep 3
+							echo "You are now a member of the preservation faction, your allegiance will greatly affect the story going forward."
+							if [ $path -eq 2 ]
+							then
+								#karma=$((karma-50))
+								#titles[i]="Betrayer"
+								#i=$((i+1))
+								sleep 0
+							else
+								#titles[i]="Preservative"
+								#i=$((i+1))
+								sleep 0
+							fi
+							path=3
+							error=0
+							;;
+						2)
+							sleep 3
+							#clear
+							echo "${CYAN}....:Oh well, I tried my best to convince you, but I guess it wasn't enough"
+							sleep 3
+							echo "${CYAN}....:Sadly for you however, I am not a man who believes in second chances$NC,The man says as he pulls out his gun"
+							sleep 3
+							echo "${RED}He shoots you in the head before you can even say another word, You lose.$NC"
+							echo "1)Restart act"
+							echo "2)Exit game"
+							read choice
+							while [ $error -eq 1 ]
+							do
+								case $choice in			
+								1)
+									Act3
+									exit 0
+									;;
+								2)	
+									echo "Thanks for playing!"
+									exit 0
+									;;
+								*)
+									echo "${YELLOW}Wrong input, please try again$NC"
+									;;
+								esac	
+													
+							done
+							error=0
+							;;
+						*)
+							echo "${YELLOW}Wrong input, please try again$NC"
+							;;
+						esac		
+								
+					done
+					error=0
+					;;
+				2)
+					sleep 3
+					#clear
+					echo "${CYAN}Red Lady:Nice to finally meet you, $p_name , How are you doing?"
+					sleep 3	
+					echo "${BLUE}I am...okay? Wait how did you know my name? Have we met before?"
+					sleep 3
+					echo "${CYAN}Red Lady:Well you definitely haven't met me before, but I know a lot of stuff about you"
+					sleep 3
+					echo "You are one of the precious seers after all"
+					sleep 3
+					echo "${BLUE}Oh that's what this is about, my newly found 'power'"
+					sleep 3
+					echo "${CYAN}Red Lady: Yes, we have our own fortune teller of sorts, who tells us when a new enlightened person will be born"
+					sleep 3
+					echo "${BLUE}I see... so what does 'we' want from me? Are you going to kill me?"
+					sleep 3
+					echo "${CYAN}Red Lady: haha no, well I would personally hate for you to die so I would like to ask you to cooperate"
+					sleep 3
+					echo "${BLUE}Cooperate? to do what?"
+					sleep 3
+					echo "${CYAN}Red Lady:We know you have visited the restoration faction's headquarters, to put it simply, what our faction and theirs want to do are quite literally the opposite, they are trying to bring sight and colour to everyone without any regard to the consequences that it might bring on all of us, while we want to control the process in order for it to stay hidden from 'them'"
+					sleep 3
+					echo "${BLUE}Wait so your faction isn't 'them'?"
+					sleep 3
+					echo "${CYAN}Red Lady: No, not even close, we are normal humans just like you, we believe that 'them' is some external force, external as in not a resident of this planet$NC"
+					sleep 3
+					echo "1)${BLUE}Wow, aren't you too old to believe in aliens?$NC"
+					echo "2)Agree to and believe what she is saying"
+					read choice
+					while [ $error -eq 1 ]
+					do
+						case $choice in			
+						1)
+							sleep 3
+							#clear
+							echo "${CYAN}Red Lady:You are funny."
+							#titles[i]="Joker"
+							#i=$((i+1))
+							error=0
+							;;
+						2)	
+							sleep 3
+							echo "${CYAN}Red Lady:So what do you say?Join us?$NC"
+							echo "1)Work with the lady's group"
+							echo "2)Refuse her offer"
+							read choice
+							error=1
+							while [ $error -eq 1 ]
+							do
+								case $choice in			
+								1)
+									sleep 3
+									#clear
+									echo "${CYAN}Red Lady:That's great! I am glad we had this talk so soon, I will take my leave now and be in touch with you!$NC"
+									sleep 3
+									echo "You are now a member of the preservation faction, your allegiance will greatly affect the story going forward."
+									if [ $path -eq 2 ]
+									then
+										#karma=$((karma-50))
+										#titles[i]="Betrayer"
+										#i=$((i+1))
+										sleep 0
+									else
+										#titles[i]="Preservative"
+										#i=$((i+1))
+										sleep 0
+									fi
+									path=3
+									error=0
+									;;
+								2)	
+									sleep 3
+									#clear
+									echo "${CYAN}Red Lady: Mhmmm...This puts me in a tough position, it really does, because you seem like a good person and I would hate to bring you any harm"
+									sleep 3
+									echo "Red Lady:However, I am sorry this has to be done, it's for the greater good, we can't let everyone regain sight and risk facing an unknown, seemingly omnipotent enemy, goodbye $p_name$NC"
+									sleep 3
+									echo "${RED}As you prepare to get off the bench, a sniper from across the river shoots you in the head. You lose!" 
+									echo "1)Restart act"
+									echo "2)Exit game"
+									read choice
+									while [ $error -eq 1 ]
+									do
+										case $choice in			
+										1)
+											Act3
+											exit 0
+											;;
+										2)	
+											echo "Thanks for playing!"
+											exit 0
+											;;
+										*)
+											echo "${YELLOW}Wrong input, please try again$NC"
+											;;
+										esac	
+													
+									done
+									error=0
+									;;
+								*)
+									echo "${YELLOW}Wrong input, please try again$NC"
+									;;
+								esac
+							done	
+							;;
+						*)
+							echo "${YELLOW}Wrong input, please try again$NC"
+							;;
+						esac
+						error=0
+					done
+					;;			
+				*)
+					echo "${YELLOW}Wrong input, please try again$NC"
+					;;
+				esac
+						
+			done
+			error=0	
+			;;
+		2)
+			sleep 3
+			#clear
+			echo "${RED}You start running away towards your house, you get out of her field of view"
+			sleep 3
+			echo "As you take a turn through the streets to get back home, someone calls out your name"
+			sleep 3
+			echo "You stop and turn around for a second when something heavy hits you on the back of the head and you black out."
+			sleep 3
+			echo "You wake up in a cold, dark, prison-like room, tied to a chair"
+			sleep 3
+			echo "You hear a voice from far away echoing all the way through the room"
+			sleep 3
+			echo "${CYAN}....:So, $p_name, you thought you could escape that easy huh? I have to say you should have been a bit smarter with your choice"
+			sleep 3
+			echo "${BLUE}Who are you?? What do you want from me and where am I??"
+			sleep 3
+			echo "${CYAN}....:Easy there champ, you aren't really in any position to be asking questions now, are you?"
+			sleep 3
+			echo "${CYAN}....:Oh well, it is unlikely that you will make it out of here anyway, so I might as well fill you in"
+			sleep 3
+			echo "${CYAN}....:You don't really need to know who I am, what we want from you is very simple really"
+			sleep 3
+			echo "${CYAN}....:We would like you to defect from the restoration faction and join us, we can put your seer powers to better use than those fools ever will"
+			sleep 3
+			echo "${BLUE}Wait...how did you know I had those powers and how did you know about the faction?"
+			sleep 3
+			echo "${CYAN}....:More questions,huh? but to answer your question, let's just say we have a... network, that lets us see more stuff than you think we can"
+			sleep 3
+			echo "${BLUE}Okay man, you seem to really be into that matrix role play, can you just tell me how to get out of here? I will probably do anything as long as it is in my power"
+			sleep 3
+			echo "${CYAN}....:I am gonna ignore that first remark because we need your power unfortunately"
+			sleep 3
+			echo "${CYAN}....:I don't really know about 'getting out of here' but if you want to live, then just work for us, it is that simple"
+			sleep 3
+			echo "${BLUE}Okay, but who is 'us' and what do they do?"
+			sleep 3
+			echo "${CYAN}....:Well, to put it in simple terms, we are a group that aims to preserve the current state of the world"
+			sleep 3
+			echo "${CYAN}....:Because just like everyone else, we don't know who 'them' are or what their purpose is, so instead of just going around spreading sight back and risking getting caught, we are controlling the process, limiting it to certain individuals who can be a bit smart about their actions "
+			sleep 3
+			echo "${BLUE}So... you are the 'good' guys?"
+			sleep 3
+			echo "${CYAN}....:Oh no definitely not, we are just realistic and logical, good and evil are really childish concepts when you think about it, we would do anything necessary to preserve the human race"
+			sleep 3
+			echo "${BLUE}Meaning that you would kill 'troublesome' individuals?"
+			sleep 3
+			echo "${CYAN}....:If need be, then yes, but we like to refrain from murder, which is why we would like you to work for us, to prevent unnecessary bloodshed and work towards finding who 'them' are"
+			sleep 3
+			echo "${CYAN}....:So, what do you say? $NC"
+			sleep 3
+			echo "1)Work with the mysterious group"
+			echo "2)Refuse to work with them because it goes against your morals"
+			read choice
+			error=1
+			while [ $error -eq 1 ]
+			do
+				case $choice in			
+				1)
+					sleep 3
+					#clear
+					echo "${CYAN}....:Wise choice, I knew you were smarter than you looked, welcome aboard, you can rest now and I will introduce you to your job later on.$NC"
+					sleep 3
+					echo "You are now a member of the preservation faction, your allegiance will greatly affect the story going forward."
+					if [ $path -eq 2 ]
+					then
+						#karma=$((karma-50))
+						#titles[i]="Betrayer"
+						#i=$((i+1))
+						sleep 0
+					else
+						#titles[i]="Preservative"
+						#i=$((i+1))
+						sleep 0
+					fi	
+					path=3
+					error=0
+					
+					;;
+				2)
+					sleep 3
+					#clear
+					echo "${CYAN}....:Oh well, I tried my best to convince you, but I guess it wasn't enough"
+					sleep 3
+					echo "${CYAN}....:Sadly for you however, I am not a man who believes in second chances$NC,The man says as he pulls out his gun"
+					sleep 3
+					echo "${RED}He shoots you in the head before you can even say another word, You lose.$NC"
+					echo "1)Restart act"
+					echo "2)Exit game"
+					read choice
+					while [ $error -eq 1 ]
+					do
+						case $choice in			
+						1)
+							Act3
+							exit 0
+							;;
+						2)	
+							echo "Thanks for playing!"
+							exit 0
+							;;
+						*)
+							echo "${YELLOW}Wrong input, please try again$NC"
+							;;
+						esac	
+													
+					done
+					error=0
+					;;
+				*)
+					echo "${YELLOW}Wrong input, please try again$NC"
+					;;
+				esac		
+								
+			done
+			error=0
+			;;
+		3)	
+			sleep 3
+			#clear
+			echo "${CYAN}Red Lady:Nice to finally meet you, $p_name , How are you doing?"	
+			sleep 3
+			echo "${BLUE}I am...okay? Wait how did you know my name? Have we met before?"
+			sleep 3
+			echo "${CYAN}Red Lady:Well you definitely haven't met me before, but I know a lot of stuff about you"
+			sleep 3
+			echo "You are one of the precious seers after all"
+			sleep 3
+			echo "${BLUE}Oh that's what this is about, my newly found 'power'"
+			sleep 3
+			echo "${CYAN}Red Lady: Yes, we have our own fortune teller of sorts, who tells us when a new enlightened person will be born"
+			sleep 3
+			echo "${BLUE}I see... so what does 'we' want from me? Are you going to kill me?"
+			sleep 3
+			echo "${CYAN}Red Lady: haha no, well I would personally hate for you to die so I would like to ask you to cooperate"
+			sleep 3
+			echo "${BLUE}Cooperate? to do what?"
+			sleep 3
+			echo "${CYAN}Red Lady:We know you have visited the restoration faction's headquarters, to put it simply, what our faction and theirs want to do are quite literally the opposite, they are trying to bring sight and colour to everyone without any regard to the consequences that it might bring on all of us, while we want to control the process in order for it to stay hidden from 'them'"
+			sleep 3
+			echo "${BLUE}Wait so your faction isn't 'them'?"
+			sleep 3
+			echo "${CYAN}Red Lady: No, not even close, we are normal humans just like you, we believe that 'them' is some external force, external as in not a resident of this planet$NC"
+			echo "1)${BLUE}Wow, aren't you too old to believe in aliens?$NC"
+			echo "2)Agree to and believe what she is saying"
+			read choice
+			while [ $error -eq 1 ]
+			do
+				case $choice in			
+				1)
+					sleep 3
+					#clear
+					echo "${CYAN}Red Lady:You are funny."
+					#titles[i]="Joker"
+					#i=$((i+1))
+					error=0
+					;;
+				2)	
+					sleep 3
+					#clear
+					echo "${CYAN}Red Lady:So what do you say?Join us?$NC"
+					echo "1)Work with the lady's group"
+					echo "2)Refuse her offer"
+					read choice
+					error=1
+					while [ $error -eq 1 ]
+					do
+						case $choice in			
+						1)	
+							sleep 3
+							echo "${CYAN}Red Lady:That's great! I am glad we had this talk so soon, I will take my leave now and be in touch with you!$NC"
+							sleep 3
+							echo "You are now a member of the preservation faction, your allegiance will greatly affect the story going forward."
+							if [ $path -eq 2 ]
+							then
+								#karma=$((karma-50))
+								#titles[i]="Betrayer"
+								#i=$((i+1))
+								sleep 0
+							else
+								#titles[i]="Preservative"
+								#i=$((i+1))
+								sleep 0
+							fi
+							path=3
+							error=0
+							;;
+						2)	
+							sleep 3
+							#clear
+							echo "${CYAN}Red Lady: Mhmmm...This puts me in a tough position, it really does, because you seem like a good person and I would hate to bring you any harm"
+							sleep 3
+							echo "Red Lady:However, I am sorry this has to be done, it's for the greater good, we can't let everyone regain sight and risk facing an unknown, seemingly omnipotent enemy, goodbye $p_name$NC"
+							sleep 3
+							echo "${RED}As you prepare to get off the bench, a sniper from across the river shoots you in the head. You lose!" 
+							echo "1)Restart act"
+							echo "2)Exit game"
+							read choice
+							while [ $error -eq 1 ]
+							do
+								case $choice in			
+								1)
+									Act3
+									exit 0
+									;;
+								2)	
+									echo "Thanks for playing!"
+									exit 0
+									;;
+								*)
+									echo "${YELLOW}Wrong input, please try again$NC"
+									;;
+								esac	
+													
+							done
+							error=0
+							;;
+						*)
+							echo "${YELLOW}Wrong input, please try again$NC"
+							;;
+						esac
+					done
+					;;	
+				*)
+					echo "${YELLOW}Wrong input, please try again$NC"
+					;;
+				esac
+				error=0
+				done
+				;;						
+	
+	
+		*)
+			echo "${YELLOW}Wrong input, please try again$NC"
+			;;
+		esac
+		error=0		
+	done
+	error=1	
+	echo "End of act 3, saving progress and you may choose to" 
+	echo "1)Start act4"
+	echo "2)Exit the game"
+	read choice
+	echo "$karma,$path,$act,$p_name" > SaveFile
+	while [ $error -eq 1 ]
+	do
+		if [ $choice -eq 1 ]
+		then
+			Act4
+			error=0
+		elif [ $choice -eq 2 ]
+		then
+			echo "Thanks for playing!"
+			sleep 2
+			error=0
+			exit 2
+		else
+			echo "${YELLOW}Wrong input, please try again$NC"
+		fi		
+	done					
+	#for i in ${titles[@]}
+	#do
+	#	echo $i > Titles
+	#done			
+				
+}
+
+
+
+
+Act4(){
+	act=4
+	error=1
+	echo "			ACT 4"
+	sleep 3
+	#clear
+	echo "You get dropped off close to your home and walk inside"
+	sleep 3
+	echo "It is nighttime and you can finally get some rest after what seemed to be an endless day"
+	sleep 3
+	echo "You start thinking about all the new information you assembled, the factions and your future"
+	sleep 3
+	echo "${BLUE}Should I really trust those preservatives with my fate? Do I even believe in their mission?$NC- you think to yourself as you consider your options"
+	sleep 3
+	echo "1)Fake your allegiance to the preservative faction and become a double agent for the restoration folk"
+	echo "2)${BLUE}What they said was very logical and I think that while their ways might be a bit rough, but they have the right idea$NC"
+	echo "3)Plan an escape from this city that seems like it can become a battlefield at any given moment"
+	read choice
+	error=1
+	while [ $error -eq 1 ]
+	do
+		case $choice in
+		1)
+			sleep 3
+			#clear
+			echo "This will take some caution and it will be risky, but you chose the restoration faction as you believe their goals align with what you think is right."
+			path=2
+			error=0
+			;;
+		2)
+			sleep 3
+			echo "You stand by the word you gave to the preservatives and you plan on carrying out your mission the way they see fit."
+			path=3
+			error=0
+			;;
+		3)
+			sleep 3
+			echo "You chose your own life and peace over some fantasy 'saving the world' story that you know you wouldn't be able to achieve"
+			path=1
+			error=0
+			;;
+		*)	
+			echo "${YELLOW}Wrong input, please try again$NC"
+			;;
+		esac
+	done
+	error=1
+	sleep 3
+	echo "Having made up your mind, you go to the kitchen to prepare a quick meal before you go to bed"
+	sleep 5
+	#clear
+	echo "You enter the kitchen, but there is nothing there, no floor or walls, no cupboards or stove, nothing"
+	echo "All you can see is a black void that you can't really make any sense of"
+	echo "You rub your eyes to double check, it is still there, the 'nothing'"
+	sleep 3
+	echo "1)Run around the house and check the other rooms"
+	echo "2)Jump into the black void"
+	read choice
+	while [ $error -eq 1 ]
+	do
+		case $choice in
+		1)
+			sleep 2
+			#clear
+			echo "You take a quick lap around the house, checking every room, and nothing seemed to be missing"
+			sleep 2
+			echo "You go back to the kitchen in hopes of something changing, and to your surprise, everything is back to normal"
+			sleep 2
+			echo "You stand there is disbelief for a solid 5 minutes, trying to understand what just happened"
+			sleep 2
+			echo "You come to the conclusion that you were just too tired as it was such a long day and you go up to your bedroom and sleep for the night"
+			error=0
+			;;
+		2)
+			path=4
+			echo "$karma,$path,$act,$p_name" > SaveFile	
+			Act5
+			exit 0	
+			;;
+		*)	
+			echo "${YELLOW}Wrong input, please try again$NC"
+			;;
+		esac
+	done
+	error=1
+	echo "The alarm rings at 5 am sharp, you are wake up well-rested, and ready to execute your plan."
+	sleep 3
+	echo "A few days pass by as you go on with your regular life, avoiding any 'obvious' signs hinting at your sight"
+	sleep 3
+	echo "One day you get a call, it is the red lady's voice on the other side"
+	sleep 3
+	echo "${CYAN}Red Lady:So, $p_name, I hope you have prepared yourself to start doing some work"
+	sleep 3
+	echo "Red Lady:Kind of an unfortunate time for you to join us though, your first mission is gonna be to spy on your friends over at the restoration faction HQ"
+	sleep 3
+	echo "Red Lady:We heard that they were planning to launch their plan, which entails giving back sight to some hundred people at once"
+	sleep 3
+	echo "Red Lady:This is gonna lead to some unfortunate consquences we fear, which is where your roles comes in handy, as someone who is accquainted with them, you can get us some information about that plan and maybe we can resolve it safely before anything dangerous takes place."
+	sleep 3
+	echo "${BLUE}Of course, I will do anything in my power to prevent the worst case scenario from happening"
+	sleep 3
+	echo "I hope I will be up to the mission, How do I report to you my findings though? I don't have any way to contact you.$NC You said as you looked at your screenless telephone"
+	sleep 3
+	echo "${CYAN}Red lady: If you are successful in your mission and do have worthy information to share, you can meet me at the same bench we sat and chatted by before, I will be there everyday by sunset. Good luck,$p_name , I pray for your success!$NC"
+	sleep 3
+	echo "${BLUE}Thank you, ma'am$NC"
+	sleep 2
+	#clear
+	case $path in
+	1)
+		echo "Once the red lady hanged up, you started preparing a few bags with you in a rush, you aren't putting up with that risky stuff anymore"
+		sleep 3
+		echo "You pack a few sets of clothing, some of your canned food and all the cash you had at home"
+		sleep 3
+		echo "Done packing, you rush out of the house"
+		sleep 3
+		echo "1)Get in your autonomus car and hit the road, you are leaving the state"
+		echo "2)Get a taxi and head to the airport, you are leaving the country"
+		read choice
+		while [ $error -eq 1 ] 
+		do
+			case $choice in
+			1)
+				sleep 3
+				#clear
+				echo "${GREEN}Smart choice, cars don't have any identification now so you will blend in with the traffic and no one will be able to track you down"
+				echo "You succesfully escape the state and head west in hopes to start a new,peaceful life where you can pretend to be blind and have no interest in the events that unfold$NC"
+				alive=1
+				error=0			
+				;;
+			2)
+				sleep 3
+				#clear
+				echo "${RED}You head to the airport, book a ticket to Japan (you are secretly a weeb), as you are being checked by the airport security, the police take you away for 'further' investigation "
+				echo "${RED}You are led into a long alleyway that doesn't seem like it belongs to the airport"
+				echo "Once you enter the room, you are greeted by a man in a black suit"
+				echo "${CYAN}Man:So $p_name, where are you headed today?"
+				echo "${BLUE}I was leaving for Japan"
+				echo "${CYAN}Man:What is the purpose of your visit?"
+				echo "${BLUE}Vacation"
+				echo "${CYAN}Man:Oh is that so? Well I regret to inform you that the only destination left for you is the grave.$NC"
+				echo "${RED}The man pulls out a gun and shoots you instantly, you are dead."
+				alive=0
+				error=0
+				;;
+			*)
+				echo "${YELLOW}Wrong input, please try again$NC"
+				;;
+			esac		
+		done
+		error=1	
+		;;
+	2)
+		sleep 3
+		#clear	
+		echo "It's Saturday, you were planning to spend the day at home relaxing, however after that call, you start getting ready to head over to the SU cafe."
+		sleep 3
+		echo "As you arrive there, you are greeted by Boomer and Ammar jr."
+		sleep 3
+		echo "${CYAN}Ammar jr.: Hello mister! My dad told me you were the one who made me able to see again, Thanks a lot!!!"
+		sleep 3
+		echo "${BLUE}No problem, little one, I hope you can enjoy your life normally from now on$NC , you said with a big grin on your face"
+		sleep 3
+		echo "${BLUE}Boomer, I need to talk to you about something important, can we go somewhere private?"
+		sleep 3
+		echo "${CYAN}Boomer:Sure thing, follow me. $NC Boomer leads you to the backroom and locks the door behind you"
+		sleep 3
+		echo "${CYAN}Boomer:What's up, $p_name?"
+		sleep 3
+		echo "${BLUE}I have some bad news... , your plans to restore sight to the people are known to the other faction and they are gonna stop you no matter the cost"
+		sleep 3
+		echo "${CYAN}Boomer:Other faction? The preservatives? How do you know about them?"
+		sleep 3
+		echo "${BLUE}Actually a few days ago they got into contact with me, and wanted me to work with them for their own agenda"
+		sleep 3
+		echo "My first mission was to spy on you guys and report to them any details I can find about your plan"
+		sleep 3
+		echo "${CYAN}Boomer:Why didn't you come to us earlier and tell us they contacted you?"
+		sleep 3
+		echo "${BLUE}To be completely honest with you, my mind wasn't completely made up on who to believe and assist but after some heavy thinking, I decided to side with you guys"
+		sleep 3
+		echo "${CYAN}Boomer:Well that is good then, we gotta plan our next move accordingly."
+		sleep 3
+		echo "${BLUE}Actually I thought up a plan, I don't know if it will work or not, but if it works we will have huge leverage of their people"
+		sleep 3
+		echo "${CYAN}Boomer:And what is that plan?"
+		sleep 3
+		echo "${BLUE}Kidnapping their boss, the 'Red Lady'"
+		sleep 6
+		#clear
+		echo "${CYAN}Boomer:Are you crazy??? That is way too risky and it goes against our ways, we don't resort to violence"
+		sleep 3
+		echo "${BLUE}I know, but there is really no other way for us to get out of this safely AND carry out your plans of restoration"
+		sleep 3
+		echo "And there will be no violence involved, I will just have to lure the lady to some pre determined spot and you guys will tie her, we can then keep her as a bargaining chip"
+		sleep 3
+		echo "${CYAN}Boomer:I am sorry $p_name, I appreciate the thought, but I can't take that big of a risk with everyone involved"
+		sleep 3
+		echo "${NC}Ammar walks in at that moment"
+		sleep 3
+		echo "${CYAN}Ammar:I agree with $p_name, sorry I didn't mean to eavesdrop but I am ready to take the risk, we can't always be on the recieving end of their attacks, we have to take the intiative on this or we might lose more than we can afford to"
+		sleep 3
+		echo "Boomer:..... then I will leave the plan's execution up to you, I pray for your success$NC"
+		sleep 3
+		echo "You go over the plan's details with Ammar and start preparing to act today."
+		sleep 3
+		echo "The clock hits 4:30, you leave the cafe towards the river bank to meet the red lady"
+		sleep 3
+		echo "You find her sitting on the bench, same as last time"
+		sleep 3
+		echo "${CYAN}Red Lady:Hello, $p_name , didn't expect to see you so quickly, I am assuming you have some information for me?"
+		sleep 3
+		echo "${BLUE}Yes I do, but before anything, we need to move from here, the faction guys were suspicious of me and I think I was followed here"
+		sleep 3
+		echo "${CYAN}Red Lady:Hmmm...You don't have to worry though, I have the whole area covered with agents of our own faction"
+		sleep 3
+		echo "1)${BLUE}Just trust me, they know where your agents are stationed and are probably taking them out one by one as we speak"
+		echo "2)Just follow me, we are not safe here"
+		read choice
+		while [ $error -eq 1 ]
+		do
+			case $choice in
+			1)	
+				sleep 5
+				#clear
+				echo "${GREEN}The lady tries to radio her agents but to no avail, it seems like the agents were actually taken out"
+				echo "However, she didn't know you played her like a fool by wearing a small signal jammer that cut all radio comms to and from her"
+				echo "She follows you into the an alley that you lead her into, and once you pass a certain door, Ammar and the gang jump out and tie her"
+				echo "They take her to some other spot as the cafe was probably being watched"
+				echo "Mission Succesful, you gained a huge leverage over the preservatives and can now move a lot more freely"
+				echo "A few months pass by, and the preservative faction is more or less destroyed as you kept cracking down on their safe spots one by one"
+				echo "Your plans for restoration take place smoothly and people are steadily regaining sight, all thanks to you!"
+				alive=1
+				error=0
+				;;
+			2)	
+				sleep 5
+				#clear
+				echo "${RED}As the lady becomes suspicious of you and your tone, she tries to radio her agents but comms seem to be dead"
+				echo "However, she put her hand high in the air and does a sign that you dont understand"
+				echo "${CYAN}Red lady:Nice try, child... you are still too green to trick me like this $NC"
+				echo "You get sniped in the head from a distance and die instantly"
+				alive=0
+				error=0
+				;;
+			*)	
+				echo "${YELLOW}Wrong input, please try again$NC"
+				;;
+			esac		
+		done
+		error=1
+		;;
+	3)
+		sleep 3
+		echo "It's Saturday, you were planning to spend the day at home relaxing, however after that call, you start getting ready to head over to the SU cafe."	
+		sleep 3
+		echo "${CYAN}Ammar jr.: Hello mister! My dad told me you were the one who made me able to see again, Thanks a lot!!!"
+		sleep 3
+		echo "${BLUE}No problem, little one, I hope you can enjoy your life normally from now on$NC , you said with a big grin on your face as you are even more determined to resolve this peacefully"
+		sleep 3
+		echo "${CYAN}Boomer:Welcome, $p_name , How have you been?"
+		sleep 3
+		echo "${BLUE}All good, Boomer, listen I need to talk to you privately for a bit, can we?"
+		sleep 3
+		echo "${CYAN}Boomer:Sure thing, follow me$NC"
+		sleep 3
+		echo "You follow him into the backroom to have a private conversation"
+		sleep 3
+		echo "${BLUE}Listen, a few days ago, the preservative faction's boss got into contact with me, and tried tricking me into helping them with their 'mission'"
+		sleep 3
+		echo "However, I firmly turned them down as I don't think what they are doing is correct, but they told me about your plans to restore people's sight?"
+		sleep 3
+		echo "I want in, I have the power after all and I can help"
+		sleep 3
+		echo "${CYAN}Boomer:Okay, but how do I know you are trustworthy? Don't get me wrong, we owe you for what you did for little Ammar, but how can I trust you?"
+		sleep 3
+		echo "1)${BLUE}Well you can wire tap me while I go and talk to the red lady, and report false information to her which would give you an edge"
+		echo "2)${BLUE}You can trust me, Boomer, why would I lie to you? You gave me the ability to see colour again and for that I am very grateful$NC"
+		while [ $error -eq 1 ]
+		do
+			case $choice in
+			1)
+				sleep 5
+				#clear
+				echo "Boomer agrees to the deal, gives you some little information about the actual plan and a lot of false plans to feed to the lady"
+				echo "As the clock hits 4:30, you head to the river bank and find the lady on the same bench as last time"
+				echo "${CYAN}Red lady:Hello, $p_name, didn't expect to meet you so quickly, I assume you have some information for me?"
+				echo "${BLUE}Of course, they completely trust me and didn't even try to follow me or anything of the sort$NC, you said as you pointed subtly at your chest, where the wire was"
+				echo "The lady notices and nods her head slightly, as you give all the false information Boomer told you to give"
+				echo "Once your conversation with the lady is over you leave for the cafe once again, so they can remove the wire"
+				echo "Boomer greets you with a warm smile and you can feel his trust in you grow"
+				echo "You go back to your home afterwards and wait by the phone, you are sure the lady will call"
+				echo "She does indeed call and you explain the situation to her and proceed to tell her you will keep extracting information little by little in the same way as today"
+				echo "The mission is super succesful, not only did you gain the information you needed, but you even fooled them into thinking they had some kind of edge over the preservatives"
+				echo "Little by little, your information helped the faction cut down the restoration process greatly, without any unnecessary bloodshed"
+				alive=1
+				error=0
+				;;
+			2)
+				sleep 5
+				#clear
+				echo "Boomer is kind of suspicious of you, so he calls in someone to the room"
+				echo "The person seems to be blind, Boomer introduces the person as his right arm commander, and proceeds to ask you the same question once more"
+				echo "You give the same exact answer"
+				echo "Boomer calls in some of the people on guard duty, they tie you up while you are still confused as to why he did so"
+				echo "${CYAN}Boomer:Well, $p_name , Zoomer here is blind by choice, that's because his enhanced hearing lets him detect when people are lying by listening to their heartbeat"
+				echo "And he gave me the signal that you are lying, I wanted to trust you but it is what it is I guess$NC"
+				echo "You are taken to some dark room where it seems you will be kept for a while"
+				alive=0
+				error=0
+				;;
+			*)
+				echo "${YELLOW}Wrong input, please try again$NC"
+				;;
+			esac
+		done	
+		;;
+	*)
+		echo "${YELLOW}Wrong input, please try again$NC"
+		;;
+	esac
+	sleep 5
+	#clear
+	case $alive in
+	0)
+		echo "You lost, would you like to restart the act?"
+		echo "1)Restart act"
+		echo "2)Exit game"
+		while [ $error -eq 1 ]
+		do
+		case $choice in			
+		1)
+			Act4
+			exit 0
+			;;
+		2)	
+			echo "Thanks for playing!"
+			exit 0
+			;;
+		*)
+		echo "${YELLOW}Wrong input, please try again$NC"
+		;;
+		esac	
+													
+		done
+		error=0
+		;;
+	1)
+		echo "Congratulations! You won!"
+		echo "Thanks for playing!"
+		echo "$karma,$path,$act,$p_name" > SaveFile
+		error=1
+		;;
+		
+	*)
+		echo "${YELLOW}Wrong input, please try again$NC"
+		;;
+	esac				
+}
+
+
+Act5(){
+	error=1
+	sleep 10
+	#clear
+	echo "You jump in the void, but that's the last thing you remember doing conciously before blacking out"
+	sleep 3
+	echo "Some time later, you wake up in a room that you don't recognize at all"
+	sleep 3
+	echo "You stand up and look in the mirror, it's not your face"
+	sleep 3
+	echo "You start to panic and scream, this is very strange to you and you can't make sense out of it"
+	sleep 3
+	echo "Some people rush in wearing lab coats, they seem to be doctors of some sort"
+	sleep 3
+	echo "${CYAN}Doctor:Ethan, calm down! You are okay there is nothing to be afraid of"
+	sleep 3
+	echo "${BLUE}MY NAME ISN'T ETHAN!!! MY NAME IS $p_name AND WHERE AM I??? $NC"
+	sleep 3
+	echo "${CYAN}Doctor:Give me something to calm him down$NC The doctor said to his colleagues"
+	sleep 3
+	echo "You try to struggle but to no avail, after you calm down a bit, the doctor then calmly explains everything"
+	sleep 3
+	echo "The year is 2022, your name is Ethan, a 24 year old fresh college graduate , You voluntereed to be an alpha tester of the super immersive Full-dive headset"
+	sleep 3
+	echo "This headset lets your brain and senses 'live' in another world after you put it on and go to sleep"
+	sleep 3
+	echo "${BLUE}So all I have been doing for the past 35 years in there was fake?"
+	sleep 3
+	echo "${CYAN}Doctor:Well it is not fake at all, but it's also not real, your story and progress are saved in the headset and you can jump back in at any time"
+	sleep 3
+	echo "Doctor:You weren't even supposed to wake up so early, but that's what alpha tests are for , we tracked down the bug you found and are working to fix it right now"
+	sleep 3
+	echo "Doctor:And by the way, you are still 24 years old, only a few days have passed since you first put on the headset"
+	sleep 3
+	echo "Doctor:We kept track of some of you activities in there so if you have any questions, feel free to ask me.$NC"
+	sleep 3
+	echo "1)What happened to all the people in the game after I got out?"
+	echo "2)Who was 'them' that the walls refered to all the time?"
+	echo "3)How can I get back in?"
+	back_in=0
+	read choice
+	while [ $error -eq 1 ]
+	do
+		case $choice in
+		1)
+			sleep 5
+			#clear
+			echo "${CYAN}Doctor:I can understand why you are so worried for them, but they are not really 'people' they are just NPCs, and after you got out the whole game world that was built around you got frozen in time, meaning they are all just the way you left them"
+			sleep 3
+			echo "${BLUE}But they are people, you didn't experience what I did, if you were in there you would forget about your 'real' world and just assume that whatever you had in there was your reality"
+			sleep 3
+			echo "${CYAN}Doctor:That is very pleasant to hear, it just means that the experiment was a success and the game is truly fully immersive"
+			sleep 3
+			echo "${BLUE}That would be true...Can I get some time to myself now? I need to process everything"
+			sleep 3
+			echo "${CYAN}Doctor:Of course, and don't worry, once you are rested we have a full medical program to get you back into your former self"
+			sleep 3
+			echo "${BLUE}Thank you.$NC"
+			sleep 3
+			echo "The doctor leaves the room and you just lay on the bed thinking about everything that had happened in there, you are still in disbelief but it seems like it was all just a 'game'"
+			sleep 3
+			echo "You fall asleep soon after."
+			error=0
+			;;
+		2)
+			echo "${CYAN}Doctor:Oh, that was in the coding for the game, there is no 'them', It was just inserted as an 'element' to make the player more cautious and suspicious of everything"
+			sleep 3
+			echo "${BLUE}Oh wow, so the poor A.I. in there have to live in fear and kill each other over something that doesn't even exist, just for a bit of entertainment?"
+			sleep 3
+			echo "${CYAN}Doctor:Well when you put it that way, it certainly sounds cruel, but it isn't that serious"
+			sleep 3
+			echo "Doctor:They don't really die after all, they get put in a suspended state until the player resets back to a certain checkpoint and they can resume their activity"
+			sleep 3
+			echo "${BLUE}Still cruel if you ask me."
+			sleep 3
+			echo "${CYAN}Doctor:That's why we have tests done before releasing anything, to ensure nobody feels the same way you do right now"
+			sleep 3
+			echo "Doctor:Anyway, I will let you rest for now, if you need anything just press the button on the side of you bed"
+			sleep 3
+			echo "${BLUE}Thank you."
+			sleep 3
+			echo "The doctor leaves the room and you just lay on the bed thinking about everything that had happened in there, you are still in disbelief but it seems like it was all just a 'game'"
+			sleep 3
+			echo "You fall asleep soon after."
+			error=0
+			;;
+		3)
+			echo "${CYAN}Doctor: Well it's really simple, we can arrange that after you get some rest, but are you sure you want to go back in? You will be fully aware that it is just a game"
+			sleep 3
+			echo "${BLUE}Yes, I would like to finish what I started"
+			sleep 3
+			echo "${CYAN}Doctor:Alright then, I will let you rest for today and tomorrow we can start preparing to send you back in"
+			sleep 3
+			echo "${Blue}Okay, thank you doctor.$NC"
+			sleep 3
+			echo "The doctor leaves the room and you just lay on the bed thinking about everything that had happened in there, you are still in disbelief but it seems like it was all just a 'game'"
+			sleep 3
+			echo "You fall asleep soon after."
+			error=0
+			back_in=1
+			;;
+		*)
+			echo "${YELLOW}Wrong input, please try again$NC"
+			;;
+		esac
+	done
+	sleep 5
+	#clear
+	error=1
+	if [ $back_in -eq 1 ]
+	then
+		echo "You wake up the next day, having made up your mind to jump back into the game"
+		sleep 3
+		echo "The doctor knocks on your door and you let him in"
+		sleep 3
+		echo "${CYAN}Doctor:So, Ethan, are you ready to go back in?"
+		sleep 3
+		echo "${BLUE}Fully ready, doc"
+		sleep 3
+		echo "${CYAN}Doctor:Great to hear, lay on the bed and the nurses will come in and prepare your body for the jump$NC"
+		sleep 3
+		echo "The nurses come in and and attach some solutions to your arm, you are gonna stay asleep for a few days after all"
+		sleep 3
+		echo "You put on the headset and right before you black out, the doctor gives you a little hint"
+		sleep 3
+		echo "${CYAN}Doctor:Beware of the little kid, he is too smart of an A.I. , try to win him over$NC"
+		sleep 3
+		echo "You wonder who he meant by that, but you don't have time to ask as you fall unconcious seconds later"
+		input="/home/zaix/Desktop/Game/SaveFile"
+		while IFS=, read -r f1 f2 f3 f4;
+		do
+  			karma=$f1
+  			path=$f2
+  			act=$f3
+  			p_name=$f4		
+		done < "$input"
+		case $act in
+		1)
+			sleep 3
+			#clear
+			Act2
+			;;
+		2)
+			sleep 3
+			#clear
+			Act3
+			;;
+		3)
+			sleep 3
+			#clear
+			Act4
+			;;
+		4)
+			sleep 3
+			Act4
+			;;	
+		5)
+			sleep 3
+			#clear
+			Act1
+			;;				
+		*)
+			exit 2
+			;;
+		esac			
+	else
+		echo "Game over, you didn't win nor did you lose, would you like to restart the game? '''y/n'''"
+		read choice
+		while [ $error -eq 1 ]
+		do
+			case $choice in
+			"y")
+				sleep 5
+				#clear
+				Act1
+				error=0
+				;;
+			"n")
+				echo "Thanks for playing!"	
+				echo "$karma,$path,$act,$p_name" > SaveFile
+				sleep 2
+				exit 0
+				;;
+			 *)
+				echo "${YELLOW}Wrong input, please try again$NC"
+				;;	
+			esac
+		done		
+	fi
+}
+
+
+#Run program
+
+karma=0
+path=0
+act=0
+i=0
+error=1
+
+echo "Welcome to the game"
+echo "Please choose one of the following options:\n1)Start a new game\n2)Continue from a previous save file\n3)Quit game"
+read choice
+
+while [ $error -eq 1 ]
+do
+	case $choice in
+	1)
+		karma=0
+		path=0
+		act=0
+		read -p "Please enter your name: " p_name
+		Game
+		error=0
+		;;
+	
+	2)
+		input="/home/zaix/Desktop/Game/SaveFile"
+		while IFS=, read -r f1 f2 f3 f4;
+		do
+  			karma=$f1
+  			path=$f2
+  			act=$f3
+  			p_name=$f4		
+		done < "$input"
+		
+		case $act in
+		1)
+			Act2
+			;;
+		2)
+			Act3
+			;;
+		3)
+			Act4
+			;;
+		4)
+			Act4
+			;;	
+		5)
+			Act1
+			;;				
+		*)
+			exit 2
+			;;
+		esac
+		error=0		
+		;;
+	*)
+		exit 0
+		;;
+	esac
+done	
